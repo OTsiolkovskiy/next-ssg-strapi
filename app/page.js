@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import Head from "next/head";
 import Link from "next/link";
 
-async function fetchPosts() {
+export async function fetchPosts() {
   const resulting = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/blogs`
   );
