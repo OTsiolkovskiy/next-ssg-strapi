@@ -17,9 +17,11 @@ export async function generateStaticParams() {
     id: post.id.toString(),
   }));
 }
-export const metadata = {
-  title: 'Static Props Example',
-  description: 'Demonstration of static props in Next.js'
+export async function generateMetadata() {
+  return {
+    title: "Static Props Example",
+    description: "Demonstration of static props in Next.js",
+  };
 }
 
 export default async function Home() {
@@ -29,11 +31,6 @@ export default async function Home() {
   console.log('aaaaaaaaaaaaaaaaaaaaaaaaaa', posts);
 
   return (
-    <>
-    <Head>
-      <title>thisBlog</title>
-      <meta title="description" content="This is an example of our blog" />
-    </Head>
     <div className={styles.container}>
       <h1>Blog Post Links:</h1>
       <div className={styles.card}>
@@ -59,7 +56,6 @@ export default async function Home() {
         })}
       </div>
     </div>
-  </>
   );
 }
 
